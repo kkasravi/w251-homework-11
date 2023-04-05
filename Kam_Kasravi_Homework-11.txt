@@ -1,0 +1,53 @@
+w251-homework-11
+
+All results are found in https://github.com/kkasravi/w251-homework-11
+
+First Change is to EPS_START, EPS_END
+
+EPS_START=1.0
+EPS_END=0.1
+
+Files:
+reinforcement_q_learning_1.ipynb
+result_1.png
+
+Results:
+
+Duration increases to be close to 500 but eventually dropping to 450. Much better than the original.
+
+
+Second Change is to GAMMA (in addition to the first change)
+
+Lowering GAMMA to 0.95
+
+Files:
+reinforcement_q_learning_2.ipynb
+result_2.png
+
+Results:
+
+Lowerign gamma results in Duration peaking below 300 (worse than the original despite including the EPS_* changes).
+
+
+Third Change GAMMA (in addition to the first change)
+
+Increasing GAMMA to 0.995
+
+Files:
+reinforcement_q_learning_3.ipynb
+result_3.png
+
+Results:
+
+Increasing gamma results in Duration losing less of the gains it made in the first change. Meaning gamma helped it to maintain the improvements in learning that happened around 400 episodes.
+
+
+
+How is the epsilon value used in training?
+
+The epsilon values represents the probability of the agent choosing a random action instead of a greedy action (the action with the highest estimated value) during a given time step. This allows the agent to explore to learn about different actions and their consequences.
+
+
+Explain the purpose of the Gamma (𝛾) value.
+
+The Gamma value balances the importance of immediate and future rewards when the agent makes decisions. When Gamma is close to 0, the agent focuses primarily on immediate or short-term rewards. When Gamma is close to 1, the agent focuses more on future rewards, leading to farsighted behavior where it aims for long-term gains.
